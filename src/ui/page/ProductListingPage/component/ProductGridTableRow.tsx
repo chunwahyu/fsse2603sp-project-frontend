@@ -1,7 +1,12 @@
 import {Box, Button, Paper, Typography} from "@mui/material";
 import { Link } from '@tanstack/react-router'
+import type {GetAllProductDto} from "../../../../data/product/ProductDto.type..ts";
 
-export default function ProductGridTableRow() {
+interface Props {
+  productDto : GetAllProductDto;
+}
+
+export default function ProductGridTableRow({productDto}: Props) {
   return (
       <Paper
           variant="outlined"
@@ -22,40 +27,49 @@ export default function ProductGridTableRow() {
           }}
       >
 
-        <Link to="/product" style={{ textDecoration: 'none', display: 'block' }}>
+        <Link
+            to="/product/$productId"
+            params={{
+              productId: productDto.pid.toString()
+            }}
+            style={{
+              textDecoration: 'none',
+              display: 'block'
+            }}
+        >
           <Box
              component="img"
-              src="https://cdn.displate.com/artwork/2025-08-12/3941e9c93bc5868b89d336764f31ef21_83feec1967e6ddc3ad7170efe73e4407.jpg?speedsize=w_681" // 換成合適的耳機範例圖，或用你原本的網址
-              alt="商品圖片原型"
+              src={productDto.imageUrl}
+              alt="Product Image"
               sx={{
                 width: '100%',
                 height: 483,
                 borderRadius: 1,
                 objectFit: 'cover',
                 flexShrink: 0,
-                border: '2px solid black'
+                border: '2px solid black',
               }}
           />
         </Link>
 
-        <Box sx={{ width: '100%' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', lineHeight: 1.3 }}>
-            One Piece / Monkey D. Luffy
+        <Box sx={{ width: '100%'}}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', lineHeight: 1.3, minHeight: "50px" }}>
+            {productDto.name}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            Stock: In Stock
+            {productDto.hasStock ? "In Stock": "Out of Stock"}
           </Typography>
         </Box>
 
         <Box sx={{ width: '100%' }}>
           <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#ff3d00' }}>
-            Price: HK$ 100
+            Price: HK$ {productDto.price.toLocaleString()}
           </Typography>
         </Box>
 
         <Button
             component={Link}
-            to="/product"
+            to={`/product/${productDto.pid}`}
             variant="contained"
             //color="primary"
             fullWidth

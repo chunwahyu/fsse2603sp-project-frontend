@@ -1,10 +1,10 @@
-import {Typography} from "@mui/material";
 import ProductGridTable from "./component/ProductGridTable.tsx";
+import TopNavigationBar from "../../component/TopNavigationBar.tsx";
 
 export default function ProductListingPage() {
   return (
       <>
-        <Typography variant="h6">Product Listing Page</Typography>
+        <TopNavigationBar />
         <ProductGridTable />
       </>
   )

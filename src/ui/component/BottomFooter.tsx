@@ -12,7 +12,7 @@ export default function BottomFooter() {
             px: 2,
             mt: 'auto',
             backgroundColor: "#F0EEE9",
-            borderTop: '1px solid',
+            borderTop: 'none',
             borderColor: 'divider',
           }}
       >

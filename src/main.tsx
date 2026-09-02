@@ -13,6 +13,7 @@ import theme from './theme';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
+import {serviceInit} from "./authService/FirebaseAuthService.ts";
 
 // Create a new router instance
 const router = createRouter({ routeTree })
@@ -23,6 +24,9 @@ declare module '@tanstack/react-router' {
     router: typeof router
   }
 }
+
+// Initialise Firebase Service
+serviceInit();
 
 // Render the app
 const rootElement = document.getElementById('root')!

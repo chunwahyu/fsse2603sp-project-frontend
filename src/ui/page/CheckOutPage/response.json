@@ -1,0 +1,35 @@
+{
+  "tid": 1,
+  "buyerUid": 1,
+  "datetime": "20210924T12:34:00",
+  "status": "PREPARE",
+  "total": 360,
+  "items": [
+    {
+      "tpid": 1,
+      "product": {
+        "pid": 16,
+        "name": "Demon Slayer: Kimetsu no Yaiba // Tanjiro",
+        "description": "A very very long description",
+        "imageUrl": "https://ts3.tc.mm.bing.net/th/id/OIP-C.0KYIxokFPXHjYYoll4GwVwHaKU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        "price": 90,
+        "stock": 100
+      },
+      "quantity": 2,
+      "subtotal": 180
+    },
+    {
+      "tpid": 2,
+      "product": {
+        "pid": 15,
+        "name": "Demon Slayer: Kimetsu no Yaiba // Nezuko",
+        "description": "A very very long description",
+        "imageUrl": "https://ts1.tc.mm.bing.net/th/id/OIP-C.IUixgeZh-OFh-8WNrS95RQHaKU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        "price": 90,
+        "stock": 100
+      },
+      "quantity": 2,
+      "subtotal": 180
+    }
+  ]
+}

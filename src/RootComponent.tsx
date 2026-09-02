@@ -1,15 +1,24 @@
 import {Outlet} from "@tanstack/react-router";
-import TopNavigationBar from "./ui/component/TopNavigationBar.tsx";
 import BottomFooter from "./ui/component/BottomFooter.tsx";
 import BackToTopButton from "./ui/component/BackToTopButton.tsx";
+import {UserContext} from "./context/UserContext.jsx.ts";
+import {useEffect, useState} from "react";
+import type {UserData} from "./data/user/user.type.ts";
+import {onAuthStateChanged} from "./authService/FirebaseAuthService.ts";
 
 export default function RootComponent() {
+
+  const [loginUser, setLoginUser] = useState<UserData | null | undefined>(undefined);
+
+  useEffect(() => {
+    onAuthStateChanged(setLoginUser);
+  }, []);
+
   return (
-      <>
-        <TopNavigationBar />
+      <UserContext.Provider value={loginUser}>
         <Outlet/>
         <BottomFooter />
         <BackToTopButton />
-      </>
+      </UserContext.Provider>
   )
 }

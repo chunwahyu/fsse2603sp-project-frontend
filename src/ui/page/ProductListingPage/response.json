@@ -1,0 +1,114 @@
+[
+  {
+    "hasStock": true,
+    "imageUrl": "https://cdn.displate.com/artwork/2025-08-12/3941e9c93bc5868b89d336764f31ef21_83feec1967e6ddc3ad7170efe73e4407.jpg?speedsize=w_681",
+    "name": "One Piece // Monkey D. Luffy",
+    "pid": 1,
+    "price": 100.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.qPobhkL0XG2z0pqVetDujwHaKe?w=208&h=294&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+    "name": "One Piece // Roronoa Zoro",
+    "pid": 2,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.ZohdTxB7lvbys-h42T--_QHaKX?w=208&h=291&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+    "name": "One Piece // Nami",
+    "pid": 3,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://static1.cbrimages.com/wordpress/wp-content/uploads/spinoff/2015/06/dragon-ball-super-poster.jpg",
+    "name": "Dragon Ball Super // All Characters",
+    "pid": 4,
+    "price": 95.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://image.tmdb.org/t/p/original/2VMZ1zRFPnUQtQp5K4WRXvDYBjh.jpg",
+    "name": "Dragon Ball Z // All Characters",
+    "pid": 5,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://m.media-amazon.com/images/I/810juzDPc1L.jpg",
+    "name": "Dragon Ball Z // Super Saiyans",
+    "pid": 6,
+    "price": 95.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://m.media-amazon.com/images/I/81WGHkbZsQL._AC_SL1500_.jpg",
+    "name": "Solo Leveling // Sung Jin Woo",
+    "pid": 7,
+    "price": 100.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://pixieposters.co.uk/cdn/shop/files/naruto_33_-gigapixel-standard-scale-0_50x_c79b9b17-b958-4152-ae8f-0fd7ca31e6bf.jpg?v=1714050819",
+    "name": "Naruto // Team 7",
+    "pid": 8,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://ts3.tc.mm.bing.net/th/id/OIP-C.vTt1xWlURvm1BFkcQ0CiNwHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "name": "Naruto Shippuden // Naruto",
+    "pid": 9,
+    "price": 80.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://i5.walmartimages.com/seo/Boruto-Naruto-Next-Generations-Grid-Wall-Poster-22-375-x-34_3d0d2b74-2844-40f4-89d2-2d657226c4f3.d424de3ffe47efd327a5ccb8710e3e01.jpeg",
+    "name": "Boruto // Next Generations",
+    "pid": 10,
+    "price": 85.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://ts3.tc.mm.bing.net/th/id/OIP-C.6-g2pgWDh9b2sedPqYRy6wHaKY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "name": "Saint Seiya // Group Poster",
+    "pid": 11,
+    "price": 80.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://i.pinimg.com/736x/53/f6/83/53f6834383e07586d91603846116ec6b.jpg",
+    "name": "Saint Seiya // Soul of Gold",
+    "pid": 12,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://image.tmdb.org/t/p/original/2yiDQCDj7hlq2SwLojV9xrFkCnr.jpg",
+    "name": "Demon Slayer: Kimetsu no Yaiba // Tsuzumi Mansion Arc",
+    "pid": 13,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://wallpapers.com/images/hd/cute-demon-slayer-mugen-train-movie-poster-5nvmwd8gesgmjszk.jpg",
+    "name": "Demon Slayer: Kimetsu no Yaiba // Mugen Train Movie Poster",
+    "pid": 14,
+    "price": 90.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://ts1.tc.mm.bing.net/th/id/OIP-C.IUixgeZh-OFh-8WNrS95RQHaKU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "name": "Demon Slayer: Kimetsu no Yaiba // Nezuko",
+    "pid": 15,
+    "price": 95.00
+  },
+  {
+    "hasStock": true,
+    "imageUrl": "https://ts3.tc.mm.bing.net/th/id/OIP-C.0KYIxokFPXHjYYoll4GwVwHaKU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "name": "Demon Slayer: Kimetsu no Yaiba // Tanjiro",
+    "pid": 16,
+    "price": 95.00
+  }
+]
