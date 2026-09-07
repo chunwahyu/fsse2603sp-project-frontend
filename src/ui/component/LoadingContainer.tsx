@@ -1,4 +1,4 @@
-import {Box, CircularProgress} from "@mui/material";
+import {Box, CircularProgress, Typography} from "@mui/material";
 
 export default function LoadingContainer() {
   return (
@@ -11,7 +11,22 @@ export default function LoadingContainer() {
             width: "100%"
           }}
       >
-        <CircularProgress enableTrackSlot size="3rem" aria-label="Loading…" />
+        <Typography
+            variant="h6"
+            sx={{
+              color: "#607D8B",
+              mx: 2
+            }}
+        >
+          LOADING
+        </Typography>
+
+        <CircularProgress
+            enableTrackSlot
+            size="3rem"
+            aria-label="Loading…"
+            sx={{color: "#607D8B"}}
+        />
       </Box>
   )
 }

@@ -1,7 +1,7 @@
 import {Outlet} from "@tanstack/react-router";
 import BottomFooter from "./ui/component/BottomFooter.tsx";
 import BackToTopButton from "./ui/component/BackToTopButton.tsx";
-import {UserContext} from "./context/UserContext.jsx.ts";
+import {UserContext} from "./context/UserContext.ts";
 import {useEffect, useState} from "react";
 import type {UserData} from "./data/user/user.type.ts";
 import {onAuthStateChanged} from "./authService/FirebaseAuthService.ts";

@@ -70,16 +70,24 @@ export default function ShoppingCartGridTableRow({
               component="img"
               src={cartItem.imageUrl}
               alt="Cart Image"
-              sx={{
-                height: 80
-              }}
+              sx={{height: 80}}
           />
         </Grid>
         <Grid size={5}>
-          <Typography variant="body1" align="center">{cartItem.name}</Typography>
+          <Typography
+              variant="body1"
+              align="center"
+          >
+            {cartItem.name}
+          </Typography>
         </Grid>
         <Grid size={1}>
-          <Typography variant="body1" align="center">HK${cartItem.price.toLocaleString()}</Typography>
+          <Typography
+              variant="body1"
+              align="center"
+          >
+            HK${cartItem.price.toLocaleString()}
+          </Typography>
         </Grid>
         <Grid
             size={2}

@@ -11,7 +11,7 @@ export interface TransactionItem {
   tpid:     number;
   product:  TransactionProduct;
   quantity: number;
-  subtotal: number;
+  subTotal: number;
 }
 
 export interface TransactionProduct {

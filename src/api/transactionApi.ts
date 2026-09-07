@@ -2,7 +2,7 @@ import type {TransactionDto} from "../data/transaction/transaction.type.ts";
 import axios from "axios";
 import {getAuthConfig} from "../authService/FirebaseAuthService.ts";
 
-const baseUrl = "http://localhost:8080"
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 export async function getTransactionByTid(tid: string) {
   const response = await axios.get<TransactionDto>(

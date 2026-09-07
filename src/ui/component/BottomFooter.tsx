@@ -27,19 +27,16 @@ export default function BottomFooter() {
                 alignItems: "center"
               }}
           >
-            {/* Copyright */}
             <Typography variant="body2" color="text.secondary">
-              © {new Date().getFullYear()} Company Name. All rights reserved.
+              © {new Date().getFullYear()} Yu Chun Wah. All rights reserved.
             </Typography>
 
-            {/* Quick Links */}
             <Stack direction="row" spacing={3}>
               <Link href="#" color="text.secondary" variant="body2" underline="hover">Privacy</Link>
               <Link href="#" color="text.secondary" variant="body2" underline="hover">Terms</Link>
               <Link href="#" color="text.secondary" variant="body2" underline="hover">Contact</Link>
             </Stack>
 
-            {/* Social Icons */}
             <Stack direction="row" spacing={1}>
               <IconButton size="small" color="inherit" component="a" href="#">
                 <FacebookIcon fontSize="small" />

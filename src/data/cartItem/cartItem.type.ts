@@ -1,8 +1,8 @@
 export interface CartItemDto {
-  pid: number;
-  name: string;
-  imageUrl: string;
-  price: number;
+  pid:          number;
+  name:         string;
+  imageUrl:     string;
+  price:        number;
   cartQuantity: number;
-  stock: number;
+  stock:        number;
 }

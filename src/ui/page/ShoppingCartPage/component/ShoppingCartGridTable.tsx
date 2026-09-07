@@ -33,19 +33,43 @@ export default function ShoppingCartGridTable({
               <Typography variant="body1"></Typography>
             </Grid>
             <Grid size={5}>
-              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Name</Typography>
+              <Typography
+                  variant="body1"
+                  align="center"
+                  sx={{fontWeight: "700"}}
+              >
+                Name
+              </Typography>
             </Grid>
             <Grid size={1}>
-              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Unit Price</Typography>
+              <Typography
+                  variant="body1"
+                  align="center"
+                  sx={{fontWeight: "700"}}
+              >
+                Unit Price
+              </Typography>
             </Grid>
             <Grid size={2}>
-              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Quantity</Typography>
+              <Typography
+                  variant="body1"
+                  align="center"
+                  sx={{fontWeight: "700"}}
+              >
+                Quantity
+              </Typography>
             </Grid>
             <Grid size={1}>
-              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Sub-Total</Typography>
+              <Typography
+                  variant="body1"
+                  align="center"
+                  sx={{fontWeight: "700"}}
+              >
+                Subtotal
+              </Typography>
             </Grid>
             <Grid size={1}>
-              <Typography variant="body1" sx={{fontWeight: "700"}}></Typography>
+              <Typography variant="body1"></Typography>
             </Grid>
           </Grid>
         </Paper>

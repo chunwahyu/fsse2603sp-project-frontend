@@ -9,7 +9,10 @@ interface Props {
 export default function CheckOutGridTable({transactionDto}: Props) {
   return (
       <>
-        <Paper elevation={2} sx={{m: 1}}>
+        <Paper
+            elevation={2}
+            sx={{m: 1}}
+        >
           <Grid
               container
               spacing={2}
@@ -20,26 +23,29 @@ export default function CheckOutGridTable({transactionDto}: Props) {
                 alignItems: "center"
               }}
           >
-            <Grid size={2} >
-              <Typography variant={"body1"}></Typography>
+            <Grid size={2}>
+
             </Grid>
             <Grid size={6}>
-              <Typography variant={"body1"} align="center" sx={{fontWeight: "700"}}>Name</Typography>
+              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Name</Typography>
             </Grid>
             <Grid size={1}>
-              <Typography variant={"body1"} align="center" sx={{fontWeight: "700"}}>Unit Price</Typography>
+              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Unit Price</Typography>
             </Grid>
             <Grid size={1}>
-              <Typography variant={"body1"} align="center" sx={{fontWeight: "700"}}>Quantity</Typography>
+              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Quantity</Typography>
             </Grid>
             <Grid size={2}>
-              <Typography variant={"body1"} align="center" sx={{fontWeight: "700"}}>Sub-Total</Typography>
+              <Typography variant="body1" align="center" sx={{fontWeight: "700"}}>Subtotal</Typography>
             </Grid>
           </Grid>
         </Paper>
         {
           transactionDto.items.map((item) => (
-              <Paper elevation={2} sx={{m: 1}}>
+              <Paper
+                  elevation={2}
+                  sx={{m: 1}}
+              >
                 <CheckOutGridTableRow item={item}/>
               </Paper>
           ))

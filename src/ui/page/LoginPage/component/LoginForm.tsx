@@ -1,43 +1,59 @@
-import {Box, Button, Divider, SvgIcon, TextField, Typography} from "@mui/material";
+import {Alert, AlertTitle, Box, Button, Divider, SvgIcon, TextField, Tooltip, Typography} from "@mui/material";
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import {useContext, useEffect, useState} from "react";
 import Paper from '@mui/material/Paper';
 import logo from "../../../assets/aniposter_logo.png";
 import {signInWithEmailAndPassword, signInWithGoogle} from "../../../../authService/FirebaseAuthService.ts";
-import {UserContext} from "../../../../context/UserContext.jsx.ts";
-import {useRouter} from "@tanstack/react-router";
+import {UserContext} from "../../../../context/UserContext.ts";
+import {useNavigate, useRouter} from "@tanstack/react-router";
 
 export default function LoginForm() {
 
   const loginUser = useContext(UserContext);
   const router = useRouter();
+  const navigate = useNavigate({from: "/login/"});
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleLogin = async () => {
-    const loginResult = await signInWithEmailAndPassword(email, password);
-    console.log(loginResult);
-
-    if(loginResult) {
-      router.history.back();
+    const emailEmpty = email.trim() === "";
+    const passwordEmpty = password.trim() === "";
+    setEmailError(emailEmpty);
+    setPasswordError(passwordEmpty);
+    if(!emailEmpty && !passwordEmpty) {
+      setIsLoading(true);
+      const loginResult = await signInWithEmailAndPassword(email, password);
+      if(loginResult) {
+        void navigate({to:"/"});
+      } else {
+        setHasError(true);
+      }
+      setIsLoading(false);
     }
   }
 
   const handleGoogleSignIn = async () => {
+    setIsLoading(true);
     const loginResult = await signInWithGoogle();
-    console.log(loginResult);
-
     if(loginResult) {
-      router.history.back();
+      void navigate({to:"/"});
     }
+    setIsLoading(false);
   }
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
 
   useEffect(() => {
     if(loginUser) {
       router.history.back();
     }
-    document.title = "Login";
   }, [loginUser]);
 
   function GoogleIcon() {
@@ -80,23 +96,53 @@ export default function LoginForm() {
           }}
           onSubmit={handleLogin}
       >
-        <Paper elevation={3} sx={{maxWidth: "400px", width: "100%", display: "flex", flexDirection: "column", p: 3}}>
+        <Paper
+            elevation={3}
+            sx={{
+              maxWidth: "400px",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              p: 3
+            }}
+        >
           <Box
               component="img"
               src={logo}
               alt="Aniposter logo"
-              sx={{height: 100, objectFit: "contain", mb: 1}}
+              sx={{
+                height: 100,
+                objectFit: "contain",
+                mb: 1
+              }}
           >
           </Box>
-
-          <Typography variant="h5" sx={{fontWeight: "500", mb: 1, textAlign: "center"}}>
-            Sign In to Aniposter
+          <Typography
+              variant="h4"
+              sx={{
+                fontWeight: "500",
+                mb: 1,
+                textAlign: "center"
+              }}
+          >
+            Welcome back
           </Typography>
-
-          <Typography variant="body1" sx={{mb: 3, textAlign: "center"}}>
-            Welcome user, please sign in to continue
+          <Typography
+              variant="body2"
+              sx={{
+                mb: 3,
+                textAlign: "center"
+              }}
+          >
+            please enter your details
           </Typography>
-
+          {
+            hasError &&
+              <Alert severity="error" sx={{mb:1}}>
+                  <AlertTitle>Login failed</AlertTitle>
+                  Unable to log into account. Please try again.
+              </Alert>
+          }
           <TextField
               required
               id="outlined-required"
@@ -105,10 +151,14 @@ export default function LoginForm() {
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
+                setEmailError(false);
+                setHasError(false);
               }}
+              disabled={isLoading}
+              error={emailError}
+              helperText={emailError ? "Email is required." : undefined}
               sx={{mb: 2}}
           />
-
           <TextField
               required
               id="outlined-password-input"
@@ -119,33 +169,42 @@ export default function LoginForm() {
               value={password}
               onChange={(event) => {
                 setPassword(event.target.value);
+                setPasswordError(false);
+                setHasError(false);
               }}
+              disabled={isLoading}
+              error={passwordError}
+              helperText={passwordError ? "Password is required." : undefined}
               sx={{mb: 2}}
           />
-
-          <Button
-              //type="submit"
-              variant="outlined"
-              size="large"
-              startIcon={<LoginRoundedIcon />}
-              sx={{my: 1, textTransform: "none"}}
-              onClick={handleLogin}
-          >
-            Sign In With Email and Password
-          </Button>
-
+          <Tooltip title="Click to sign in with email and password">
+            <Button
+                variant="outlined"
+                size="large"
+                startIcon={<LoginRoundedIcon />}
+                sx={{
+                  my: 1,
+                  textTransform: "none"
+                }}
+                onClick={handleLogin}
+                disabled={isLoading}
+            >
+              Sign In With Email and Password
+            </Button>
+          </Tooltip>
           <Divider>or</Divider>
-
-          <Button
-              fullWidth
-              variant="outlined"
-              onClick={handleGoogleSignIn}
-              startIcon={GoogleIcon()}
-              sx={{my: 1, textTransform: "none"}}
-          >
-            Sign in with Google
-          </Button>
-
+          <Tooltip title="Click to sign in with google account">
+            <Button
+                fullWidth
+                variant="outlined"
+                onClick={handleGoogleSignIn}
+                startIcon={GoogleIcon()}
+                disabled={isLoading}
+                sx={{my: 1, textTransform: "none"}}
+            >
+              Sign in with Google
+            </Button>
+          </Tooltip>
         </Paper>
       </Box>
   )

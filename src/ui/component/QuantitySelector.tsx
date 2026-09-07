@@ -16,7 +16,11 @@ export default function QuantitySelector({
                                            isLoading = false
                                           }:Props) {
   return (
-      <Stack direction={"row"} spacing={2} sx={{alignItems: "center"}}>
+      <Stack
+          direction="row"
+          spacing={2}
+          sx={{alignItems: "center"}}
+      >
         <IconButton
             onClick={handleQuantityMinusOne}
             disabled={isLoading}
@@ -25,7 +29,10 @@ export default function QuantitySelector({
         </IconButton>
         {
           isLoading
-            ? <CircularProgress />
+            ? <CircularProgress
+                  enableTrackSlot
+                  sx={{color: "#607D8B"}}
+              />
               : (
                   <Typography variant="body2">
                     {quantity}

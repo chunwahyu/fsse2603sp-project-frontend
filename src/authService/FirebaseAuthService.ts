@@ -6,10 +6,10 @@ import {
   onAuthStateChanged as firebaseOnAuthStateChanged,
   signInWithEmailAndPassword as firebaseSignInWithEmailAndPassword,
   signInWithPopup,
-  signOut as firebaseSignOut
+  signOut as firebaseSignOut,
+  //updateProfile
 } from "firebase/auth";
 import type {UserData} from "../data/user/user.type.ts";
-
 
 export const serviceInit = () => {
   // Your web app's Firebase configuration
@@ -24,6 +24,11 @@ export const signInWithEmailAndPassword = async (email: string, password: string
     const auth = getAuth();
     await firebaseSignInWithEmailAndPassword(auth, email, password);
     // Signed in
+    //const user = auth.currentUser;
+    //if(user !== null) {
+      //await updateProfile(user, { displayName: "Mary" });
+      //console.log(user.displayName);
+    //}
     return true;
   } catch (error) {
     console.log(error);
@@ -54,7 +59,8 @@ export const onAuthStateChanged = (setUser: (user: UserData | null) => void) => 
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       loginUser = {
-        email: user.email || "Login User"
+        email: user.email || "Login User",
+        display_name: user.displayName || ""
       }
     } else {
       // User is signed out

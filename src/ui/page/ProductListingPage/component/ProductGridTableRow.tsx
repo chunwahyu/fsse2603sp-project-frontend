@@ -1,6 +1,6 @@
-import {Box, Button, Paper, Typography} from "@mui/material";
+import {Box, Button, Paper, Tooltip, Typography} from "@mui/material";
 import { Link } from '@tanstack/react-router'
-import type {GetAllProductDto} from "../../../../data/product/ProductDto.type..ts";
+import type {GetAllProductDto} from "../../../../data/product/ProductDto.type.ts";
 
 interface Props {
   productDto : GetAllProductDto;
@@ -53,31 +53,52 @@ export default function ProductGridTableRow({productDto}: Props) {
         </Link>
 
         <Box sx={{ width: '100%'}}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', lineHeight: 1.3, minHeight: "50px" }}>
+          <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: 'bold',
+                lineHeight: 1.3,
+                minHeight: "50px"
+              }}
+          >
             {productDto.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+          <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ mt: 0.5 }}
+          >
             {productDto.hasStock ? "In Stock": "Out of Stock"}
           </Typography>
         </Box>
 
         <Box sx={{ width: '100%' }}>
-          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#ff3d00' }}>
+          <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 'bold',
+                color: '#ff3d00'
+              }}
+          >
             Price: HK$ {productDto.price.toLocaleString()}
           </Typography>
         </Box>
-
-        <Button
-            component={Link}
-            to={`/product/${productDto.pid}`}
-            variant="contained"
-            //color="primary"
-            fullWidth
-            size="medium"
-            sx={{ borderRadius: 1.5, mt: 'auto', backgroundColor: "#607D8B" }}
-        >
-          More details
-        </Button>
+        <Tooltip title="Click here for more details">
+          <Button
+              component={Link}
+              to={`/product/${productDto.pid}`}
+              variant="contained"
+              fullWidth
+              size="medium"
+              sx={{
+                borderRadius: 50,
+                mt: 'auto',
+                backgroundColor: "#607D8B"
+              }}
+          >
+            More details
+          </Button>
+        </Tooltip>
       </Paper>
   )
 }
