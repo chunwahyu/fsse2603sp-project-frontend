@@ -13,12 +13,13 @@ export default function CheckOutGridTableRow({item}: Props) {
           sx={{
             p: 2,
             display: "flex",
+            flexDirection: {xs: "column", sm: "row"},
             justifyContent: "center",
             alignItems: "center"
           }}
       >
         <Grid
-            size={{xs:2}}
+            size={{xs:12, sm:2}}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -36,7 +37,17 @@ export default function CheckOutGridTableRow({item}: Props) {
               }}
           />
         </Grid>
-        <Grid size={{xs:6}}>
+        <Grid size={{xs:12,sm:6}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"}
+              }}
+          >
+            Name:
+          </Typography>
           <Typography
               variant="body1"
               align="center"
@@ -44,7 +55,17 @@ export default function CheckOutGridTableRow({item}: Props) {
             {item.product.name}
           </Typography>
         </Grid>
-        <Grid size={{xs:1}}>
+        <Grid size={{xs:12,sm:1}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"}
+              }}
+          >
+            Price:
+          </Typography>
           <Typography
               variant="body1"
               align="center"
@@ -52,7 +73,17 @@ export default function CheckOutGridTableRow({item}: Props) {
             HK${item.product.price.toLocaleString()}
           </Typography>
         </Grid>
-        <Grid size={{xs:1}}>
+        <Grid size={{xs:12,sm:1}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"}
+              }}
+          >
+            Quantity:
+          </Typography>
           <Typography
               variant="body1"
               align="center"
@@ -60,7 +91,17 @@ export default function CheckOutGridTableRow({item}: Props) {
             {item.quantity}
           </Typography>
         </Grid>
-        <Grid size={{xs:2}}>
+        <Grid size={{xs:12, sm:2}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"}
+              }}
+          >
+            Subtotal:
+          </Typography>
           <Typography
               variant="body1"
               align="center"

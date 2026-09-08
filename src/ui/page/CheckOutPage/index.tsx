@@ -11,7 +11,6 @@ import {
 } from "../../../api/transactionApi.ts";
 import {UserContext} from "../../../context/UserContext.ts";
 import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
-//import mockData from "./response.json";
 
 export default function CheckOutPage() {
 
@@ -50,7 +49,6 @@ export default function CheckOutPage() {
         setIsLoading(true);
         const responseData = await getTransactionByTid(transactionId);
         setTransactionDto(responseData);
-        //setTransactionDto(mockData);
       } catch (error) {
         console.log(error);
       } finally {
@@ -62,7 +60,7 @@ export default function CheckOutPage() {
     } else if(loginUser === null) {
       void navigate({to: "/login"});
     }
-  }, [loginUser]);
+  }, [loginUser, navigate, transactionId]);
 
   return (
       <Container>

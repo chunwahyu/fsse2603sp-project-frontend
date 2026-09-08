@@ -38,13 +38,28 @@ export default function BottomFooter() {
             </Stack>
 
             <Stack direction="row" spacing={1}>
-              <IconButton size="small" color="inherit" component="a" href="#">
+              <IconButton
+                  size="small"
+                  color="inherit"
+                  component="a"
+                  href="#"
+              >
                 <FacebookIcon fontSize="small" />
               </IconButton>
-              <IconButton size="small" color="inherit" component="a" href="#">
+              <IconButton
+                  size="small"
+                  color="inherit"
+                  component="a"
+                  href="#"
+              >
                 <TwitterIcon fontSize="small" />
               </IconButton>
-              <IconButton size="small" color="inherit" component="a" href="#">
+              <IconButton
+                  size="small"
+                  color="inherit"
+                  component="a"
+                  href="#"
+              >
                 <InstagramIcon fontSize="small" />
               </IconButton>
             </Stack>

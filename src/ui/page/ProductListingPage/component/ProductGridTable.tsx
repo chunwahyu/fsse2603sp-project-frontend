@@ -7,7 +7,6 @@ import {useNavigate} from "@tanstack/react-router";
 import {getAllProduct} from "../../../../api/productApi.ts";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-//import mockData from "../response.json";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -37,7 +36,6 @@ export default function ProductGridTable() {
       try {
         const responseData = await getAllProduct();
         setProductDtoList(responseData);
-        //setProductDtoList(mockData);
         setIsLoading(false);
         document.title = "Aniposter";
       } catch {
@@ -45,7 +43,7 @@ export default function ProductGridTable() {
       }
     }
     void fetchProductDtoList();
-  }, []);
+  }, [navigate]);
 
   const handleSearchValueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);

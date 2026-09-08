@@ -54,7 +54,7 @@ export default function LoginForm() {
     if(loginUser) {
       router.history.back();
     }
-  }, [loginUser]);
+  }, [loginUser, router.history]);
 
   function GoogleIcon() {
     return (
@@ -138,8 +138,14 @@ export default function LoginForm() {
           </Typography>
           {
             hasError &&
-              <Alert severity="error" sx={{mb:1}}>
-                  <AlertTitle>Login failed</AlertTitle>
+              <Alert
+                  severity="error"
+                  sx={{
+                    mb:1,
+                    fontSize: {xs:"0.7rem", sm:"0.85rem"}
+                  }}
+              >
+                  <AlertTitle sx={{fontSize: {xs:"0.7rem", sm:"0.85rem", md:"1rem"}}}>Login failed</AlertTitle>
                   Unable to log into account. Please try again.
               </Alert>
           }
@@ -184,7 +190,8 @@ export default function LoginForm() {
                 startIcon={<LoginRoundedIcon />}
                 sx={{
                   my: 1,
-                  textTransform: "none"
+                  textTransform: "none",
+                  fontSize:{xs:"0.9rem", sm:"1rem"}
                 }}
                 onClick={handleLogin}
                 disabled={isLoading}
@@ -200,7 +207,10 @@ export default function LoginForm() {
                 onClick={handleGoogleSignIn}
                 startIcon={GoogleIcon()}
                 disabled={isLoading}
-                sx={{my: 1, textTransform: "none"}}
+                sx={{
+                  my: 1,
+                  textTransform: "none"
+                }}
             >
               Sign in with Google
             </Button>

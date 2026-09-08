@@ -18,7 +18,7 @@ export default function CheckOutGridTable({transactionDto}: Props) {
               spacing={2}
               sx={{
                 p: 2,
-                display: "flex",
+                display: {xs:"none", sm:"flex"},
                 justifyContent: "center",
                 alignItems: "center"
               }}

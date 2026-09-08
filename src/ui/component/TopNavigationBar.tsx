@@ -34,7 +34,11 @@ export default function TopNavigationBar() {
             <Typography
                 variant="body1"
                 component="span"
-                sx={{color: "#212529", mx:1}}
+                sx={{
+                  color: "#212529",
+                  mx:1,
+                  display: { xs: 'none', sm: "inline" }
+                }}
             >
               Welcome back, {loginUser.display_name === undefined ? loginUser.email.split("@")[0] : loginUser.display_name}!
             </Typography>
@@ -119,7 +123,11 @@ export default function TopNavigationBar() {
             <Typography
                 variant="body1"
                 component="span"
-                sx={{color: "#212529", mx:1}}
+                sx={{
+                  color: "#212529",
+                  mx:1,
+                  display: { xs: 'none', sm: "inline" }
+                }}
             >
               Hello, Guest!
             </Typography>
@@ -195,7 +203,7 @@ export default function TopNavigationBar() {
             <Box
               component="img"
               src={logo}
-              sx={{height: 100}}
+              sx={{height: {xs:70, sm:100, md:100 }}}
             >
             </Box>
             <Box sx={{flexGrow: 1}} />

@@ -10,7 +10,6 @@ import {prepareTransaction} from "../../../api/transactionApi.ts";
 import {getUserCart} from "../../../api/cartItemApi.ts";
 import {useNavigate} from "@tanstack/react-router";
 import ShoppingBagRoundedIcon from '@mui/icons-material/ShoppingBagRounded';
-//import mockData from "./response.json";
 
 export default function ShoppingCartPage() {
   const navigate = useNavigate({from: "/cart/"});
@@ -72,7 +71,6 @@ export default function ShoppingCartPage() {
         setIsLoading(true);
         const responseData = await getUserCart();
         setUserCartList(responseData);
-        //setUserCartList(mockData);
       } catch (error) {
         console.log(error);
         void navigate({to:"/error"});
@@ -85,7 +83,7 @@ export default function ShoppingCartPage() {
     } else if(loginUser === null) {
       void navigate({to: "/login"});
     }
-  }, [loginUser]);
+  }, [loginUser, navigate]);
 
   return (
       <>

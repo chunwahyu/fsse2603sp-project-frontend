@@ -54,12 +54,13 @@ export default function ShoppingCartGridTableRow({
           sx={{
             p: 2,
             display: "flex",
+            flexDirection: {xs: "column", sm: "row"},
             justifyContent: "center",
             alignItems: "center"
           }}
       >
         <Grid
-            size={2}
+            size={{xs:12, sm:2}}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -73,7 +74,17 @@ export default function ShoppingCartGridTableRow({
               sx={{height: 80}}
           />
         </Grid>
-        <Grid size={5}>
+        <Grid size={{xs:12, sm:5}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"}
+          }}
+          >
+            Name:
+          </Typography>
           <Typography
               variant="body1"
               align="center"
@@ -81,7 +92,17 @@ export default function ShoppingCartGridTableRow({
             {cartItem.name}
           </Typography>
         </Grid>
-        <Grid size={1}>
+        <Grid size={{xs:12, sm:1}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"},
+              }}
+          >
+            Price:
+          </Typography>
           <Typography
               variant="body1"
               align="center"
@@ -104,7 +125,17 @@ export default function ShoppingCartGridTableRow({
               isLoading={isQuantityChanged}
           />
         </Grid>
-        <Grid size={1}>
+        <Grid size={{xs:12, sm:1}}>
+          <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                fontWeight:500,
+                display:{xs:"inline", sm:"none"},
+              }}
+          >
+            Subtotal:
+          </Typography>
           <Typography
               variant="body1"
               align="center"

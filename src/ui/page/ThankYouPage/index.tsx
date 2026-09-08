@@ -31,7 +31,7 @@ export default function ThankYouPage() {
     } else if(loginUser === null || loginUser === undefined) {
       void navigate({to: "/error"});
     }
-  }, [countDown,loginUser]);
+  }, [countDown, loginUser, navigate]);
 
   return (
       <>
@@ -61,6 +61,7 @@ export default function ThankYouPage() {
                       />
                       <Typography
                           variant="body1"
+                          align="center"
                           sx={{mb: 3}}
                       >
                         Hi, {loginUser.display_name === undefined ? loginUser.email.split("@")[0] : loginUser.display_name}! Your order has been placed and is being processed.
@@ -70,8 +71,8 @@ export default function ThankYouPage() {
                           align="center"
                           sx={{mb: 4}}
                       >
-                        You will be redirected to the home page in {countDown} second(s)<br/>
-                        or click here to return to home page
+                        You will return to the homepage in {countDown} second(s).<br/>
+                        Alternatively, click the button below.
                       </Typography>
                       <Tooltip title="Click to go back to home page">
                         <Button

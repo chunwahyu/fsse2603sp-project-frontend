@@ -22,7 +22,6 @@ import {getProductByPid} from "../../../api/productApi.ts";
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import axios from "axios";
-//import mockData from "./response.json"
 
 export default function ProductDetailPage() {
 
@@ -83,7 +82,6 @@ export default function ProductDetailPage() {
         setIsLoading(true);
         const responseData = await getProductByPid(productId);
         setProductDetailDto(responseData);
-        //setProductDetailDto(mockData);
         document.title = responseData.name;
       } catch(error) {
         console.log(error);
